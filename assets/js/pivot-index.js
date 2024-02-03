@@ -1,4 +1,18 @@
-function pivotIndex(nums) {
+function calculatePivot() {
+  const numsInput = document.getElementById('numsInput').value;
+  const nums = numsInput.split(',').map(Number);
+  
+  let pivotIndex = findPivotIndex(nums);
+  
+  const resultElement = document.getElementById('result');
+  if (pivotIndex !== -1) {
+      resultElement.textContent = `Pivot Index: ${pivotIndex}`;
+  } else {
+      resultElement.textContent = 'No pivot index found.';
+  }
+}
+
+function findPivotIndex(nums) {
   const totalSum = nums.reduce((acc, num) => acc + num, 0);
   let leftSum = 0;
 
@@ -12,10 +26,5 @@ function pivotIndex(nums) {
       leftSum += nums[i];
   }
 
-  return -1; // If no pivot index is found
+  return -1;
 }
-
-
-const nums = [1, 7, 3, 6, 5, 6];
-const result = pivotIndex(nums);
-console.log(result);

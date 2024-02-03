@@ -164,6 +164,10 @@ header p {
     color: #055BA6;
 
 }
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
 
 /* Sticky footer styles
   -------------------------------------------------- */
